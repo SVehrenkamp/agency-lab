@@ -1,0 +1,47 @@
+name: Artifact
+description: Track production of a knowledge-base artifact for a phase.
+title: "[Artifact] "
+labels: ["artifact"]
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - "00 · Spark"
+        - "01 · Kickoff"
+        - "02 · Research"
+        - "03 · Refinement"
+        - "04 · Scoping"
+        - "05 · UX / Wireframing"
+        - "06 · Design"
+        - "07 · Dev Kickoff"
+        - "08 · Implementation"
+        - "09 · Review / QA"
+    validations:
+      required: true
+  - type: input
+    id: path
+    attributes:
+      label: Target file in /knowledge-base
+      placeholder: knowledge-base/03-refinement/prd.md
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What makes this artifact "done" and approvable at the gate?
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Working mode
+      description: Default is draft-then-approve. Add the matching mode label if it's an override.
+      options:
+        - "draft-then-approve (default)"
+        - "mode:auto"
+        - "mode:collab"
+    validations:
+      required: true

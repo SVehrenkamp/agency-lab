@@ -1,0 +1,53 @@
+name: Amendment
+description: Record a learning that contradicts an upstream artifact. Don't stop and rewrite — log it.
+title: "[Amendment] "
+labels: ["amendment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Cheap backtracking. Capture the contradiction and keep moving. It will be
+        dispositioned at the next gate review, not now.
+  - type: textarea
+    id: learning
+    attributes:
+      label: What did you learn?
+    validations:
+      required: true
+  - type: input
+    id: upstream
+    attributes:
+      label: Which upstream artifact / assumption does it touch?
+      placeholder: knowledge-base/01-kickoff/problem-brief.md — "no competitor bundles X"
+    validations:
+      required: true
+  - type: dropdown
+    id: surfaced
+    attributes:
+      label: Phase where this surfaced
+      options:
+        - "01 · Kickoff"
+        - "02 · Research"
+        - "03 · Refinement"
+        - "04 · Scoping"
+        - "05 · UX / Wireframing"
+        - "06 · Design"
+        - "07 · Dev Kickoff"
+        - "08 · Implementation"
+        - "09 · Review / QA"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "minor — absorb and move on"
+        - "major — may warrant reopening a phase"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        > After choosing severity, add the matching `severity:minor` / `severity:major`
+        > label, and link this issue to the milestone of the artifact it affects.

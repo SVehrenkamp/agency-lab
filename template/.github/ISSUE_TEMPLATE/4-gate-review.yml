@@ -1,0 +1,36 @@
+name: Gate Review
+description: Approve advancing from one phase to the next. Always a human decision.
+title: "[Gate] Advance from <phase> to <phase>"
+labels: ["gate", "mode:collab"]
+body:
+  - type: input
+    id: from-phase
+    attributes:
+      label: Phase completing
+      placeholder: "02 · Research"
+    validations:
+      required: true
+  - type: input
+    id: to-phase
+    attributes:
+      label: Phase to advance into
+      placeholder: "03 · Refinement"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Gate checklist
+      options:
+        - label: All open amendments against upstream artifacts have been reviewed
+        - label: Each amendment is dispositioned (absorb / reopen)
+        - label: Upstream artifacts updated where amendments were absorbed
+        - label: Required artifacts for the completing phase exist and are approved
+        - label: Approved to advance
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Disposition notes
+      description: Brief record of any reopen decisions and why.
