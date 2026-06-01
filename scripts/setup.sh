@@ -60,8 +60,9 @@ done
 echo
 
 # --- milestones -------------------------------------------------------------
+# Spark is not a phase milestone — a project repo is already one graduated idea.
+# The idea backlog is tracked as `spark`-labeled issues at the lab level.
 MILESTONES=(
-  "00 · Spark"
   "01 · Kickoff"
   "02 · Research"
   "03 · Refinement"
@@ -86,4 +87,6 @@ for title in "${MILESTONES[@]}"; do
 done
 echo
 
-echo "Done. Open the '00 · Spark' milestone to start dropping ideas in."
+echo "Done. The phase milestones (01-09) are ready — open '01 · Kickoff' to begin."
+echo "(Triaging many ideas? Keep them as 'spark'-labeled issues on your Agency Lab"
+echo " home repo — the backlog is a lab-level concern, not a per-project one.)"

@@ -9,6 +9,10 @@ The work moves through nine phases — Kickoff → Research → Refinement → S
 Design → Dev Kickoff → Implementation → QA — each producing specific artifacts into the
 `knowledge-base/` folder. The full spec is in `FRAMEWORK.md`.
 
+This repo is a single idea. "Spark" is a lab-level concept, not a project phase: the idea
+was already promoted when this repo was created, and `knowledge-base/00-spark/spark.md` is
+its frozen origin record (the seed Kickoff reads). Don't expect a spark backlog here.
+
 The phase you're in is simply *which artifact is currently being produced*. Each phase has
 a driver skill in `.claude/skills/<phase>/` (auto-loaded here). To run a phase, use its
 skill — e.g. "run the Kickoff phase", "do the Research phase".

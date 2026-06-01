@@ -9,7 +9,7 @@ The phase you're in is simply *which artifact is currently being produced*.
 
 | Folder | Phase | Key artifacts |
 |--------|-------|---------------|
-| `00-spark/` | Spark | `spark.md` |
+| `00-spark/` | Spark | `spark.md` (the one promoted spark — the idea backlog is lab-level) |
 | `01-kickoff/` | Kickoff | `problem-brief.md`, `shared-understanding.md` |
 | `02-research/` | Research | `competitive-landscape.md`, `pricing-teardown.md`, `sentiment-analysis.html` |
 | `03-refinement/` | Refinement | `prd.md`, `product-edge.md` |

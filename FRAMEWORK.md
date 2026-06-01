@@ -44,15 +44,24 @@ Two design commitments shape everything below:
   ▲ amendments flow backward at every step; gates reconcile them forward
 ```
 
-**Spark** sits in front of everything as a cheap filter. An idea gets a paragraph and a gut-check. A hundred sparks can sit in a backlog costing almost nothing; only ideas you consciously promote cross the **graduation gate** into the heavyweight machinery. This is the single most important feature of the framework — it is what keeps experimentation fast.
+### Two layers: the lab and the project
+
+Agency Lab works at two layers, and keeping them distinct is what squares "Spark" (many ideas) with a repo that holds a single idea:
+
+- **The lab** — where *many* ideas accumulate and get triaged. This is the Spark backlog: a paragraph and a gut-check per idea, most of which never go further. It lives at the lab level — as `spark`-labeled issues on your Agency Lab home repo (see §5) — and deliberately *not* inside any single project, because anything that lived in the template would be copied into every new project.
+- **A project** — *one* idea running the full pipeline below. A repo created from the template **is** a project; by the time it exists, the idea has already won.
+
+The boundary between them is **graduation**: promoting a spark is the moment it stops being one of many and earns its own project repo. The graduation gate and `gh repo create … --template` are the same act. Everything from Kickoff onward happens inside that project repo, and its `00-spark/spark.md` is simply the promoted spark carried in as the project's **origin record** — one idea, frozen at the moment it graduated. The cheap Spark filter is still the single most important feature of the framework; it is what keeps experimentation fast.
 
 ### Phase reference
 
+Spark and the graduation gate are lab-level steps (above); phases 1–9 are the project.
+
 | # | Phase | Consumes | Produces | Primary mode |
 |---|-------|----------|----------|--------------|
-| 0 | **Spark** | An idea | `spark.md` (one paragraph + gut-check) | collab |
-| — | **Graduation gate** | A spark | Decision to promote or shelve | collab |
-| 1 | **Kickoff** | Promoted spark | `problem-brief.md`, `shared-understanding.md` | auto-draft → grill-me |
+| 0 | **Spark** *(lab-level)* | An idea | a `spark`-labeled issue in the lab backlog | collab |
+| — | **Graduation gate** *(lab→project)* | A promoted spark | a new project repo + its `00-spark/spark.md` origin record | collab |
+| 1 | **Kickoff** | Promoted spark (`00-spark/spark.md`) | `problem-brief.md`, `shared-understanding.md` | auto-draft → grill-me |
 | 2 | **Research** | Problem brief | `competitive-landscape.md`, `pricing-teardown.md`, `sentiment-analysis.html` | auto |
 | 3 | **Refinement** | Brief + research | `prd.md`, `product-edge.md` | auto-draft → grill-me |
 | 4 | **Scoping** | PRD | `v1-scope.md`, `out-of-scope.md` | auto-draft |
@@ -63,6 +72,8 @@ Two design commitments shape everything below:
 | 9 | **Review / QA** | Each delivered feature | `qa-reports.md`, review checklists | collab (sign-off) |
 
 ### Phase notes
+
+**Spark** is the lab-level filter, not a project phase (see *Two layers* above). A graduated spark is written into the new project as `00-spark/spark.md` — the single origin record Kickoff reads. The *backlog* of competing ideas stays at the lab level as `spark` issues.
 
 **Kickoff** is the grill-me session — a thorough interrogation to reach shared understanding of what the idea *is*. It deliberately does not touch architecture or implementation.
 
@@ -90,7 +101,7 @@ Each phase has a fixed home. Markdown for prose and decisions; HTML for things m
 
 ```
 /knowledge-base
-  /00-spark          → spark.md
+  /00-spark          → spark.md   (the one promoted spark; the idea backlog lives at the lab level, not here)
   /01-kickoff        → problem-brief.md, shared-understanding.md
   /02-research       → competitive-landscape.md, pricing-teardown.md, sentiment-analysis.html
   /03-refinement     → prd.md, product-edge.md
@@ -117,7 +128,7 @@ Every markdown artifact ends with a standard amendment section:
 
 GitHub is the state machine. The phase you're in is simply which artifact is currently being produced.
 
-**Milestones = phases.** The open milestone is the active phase. Nine milestones (plus the spark backlog) mirror the pipeline.
+**Milestones = phases.** The open milestone is the active phase. The nine phase milestones (`01 · Kickoff` … `09 · Review / QA`) mirror the pipeline. Spark is *not* a milestone — a project repo is already one graduated idea, so there's nothing to triage inside it. The idea **backlog** lives at the lab level as `spark`-labeled issues on your Agency Lab home repo.
 
 **Issues = tasks and artifacts.** An artifact issue closes when its document is approved.
 
@@ -129,6 +140,7 @@ GitHub is the state machine. The phase you're in is simply which artifact is cur
 
 | Label | Meaning |
 |-------|---------|
+| `spark` | An idea in the lab backlog, awaiting graduation (lab repo) |
 | `amendment` | A learning that contradicts an upstream artifact |
 | `severity:minor` / `severity:major` | How much an amendment matters |
 | `mode:auto` | Safe to run unattended |

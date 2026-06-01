@@ -43,16 +43,19 @@ The full rationale lives in **[FRAMEWORK.md](FRAMEWORK.md)**.
   ▲ amendments flow backward at every step; gates reconcile them forward
 ```
 
-**Spark** is a cheap front door — a paragraph and a gut-check. Only ideas you promote
-cross the **graduation gate** into the heavyweight phases. The first seven phases run once,
-in sequence; **Implementation and QA loop per feature** (build a testable slice, QA it,
-repeat).
+**Spark** is a cheap front door — a paragraph and a gut-check. It works at a *different
+layer* than the rest: many sparks sit in a lab-level backlog, and only the ones you promote
+cross the **graduation gate** to become their own project. **Creating a repo from the
+template _is_ graduation** — by then the idea has already won, and its `spark.md` rides in
+as the project's origin record (see [Sparks and the lab](#sparks-and-the-lab)). The first
+seven phases run once, in sequence; **Implementation and QA loop per feature** (build a
+testable slice, QA it, repeat).
 
 ### The phases
 
 | # | Phase | Produces | Default mode |
 |---|-------|----------|--------------|
-| 0 | **Spark** | `spark.md` | collab |
+| 0 | **Spark** *(lab-level)* | a `spark` issue → `spark.md` at graduation | collab |
 | 1 | **Kickoff** | `problem-brief.md`, `shared-understanding.md` | draft → grill-me |
 | 2 | **Research** | `competitive-landscape.md`, `pricing-teardown.md`, `sentiment-analysis.html` | auto |
 | 3 | **Refinement** | `prd.md`, `product-edge.md` | draft → grill-me |
@@ -77,6 +80,26 @@ repeat).
   *absorb* or *reopen*, then approves the advance. Advancing a phase is always a human act.
 - **Modes.** The default is **draft-then-approve** (a machine drafts, a human judges), with
   `mode:auto` and `mode:collab` as the overrides.
+
+---
+
+## Sparks and the lab
+
+A repo created from this template holds **one idea**. So where do the *many* ideas a
+"Spark" backlog implies actually live? At a different layer:
+
+- **The lab** is where many ideas accumulate and get triaged — a paragraph and a gut-check
+  each, most never going further. The backlog lives as `spark`-labeled **issues on your
+  Agency Lab home repo** (the repo you keep the template in). It deliberately is *not* a
+  folder in the template, because anything in the template gets copied into every new
+  project — a backlog would leak everywhere.
+- **A project** is one promoted idea running the full Kickoff→QA pipeline. This repo.
+
+**Graduation** is the boundary, and it coincides with creating the project: spinning up a
+repo from the template *is* promoting a spark. The idea's `00-spark/spark.md` rides into the
+new repo as its **origin record** — one idea, frozen at the moment it graduated, and the
+single seed the Kickoff phase reads. That's why there's no `00 · Spark` milestone inside a
+project: by the time the repo exists, the spark has already graduated.
 
 ---
 
@@ -142,21 +165,25 @@ chmod +x scripts/setup.sh   # if it didn't carry over as executable
 ./scripts/setup.sh
 ```
 
-It creates the ten phase milestones (`00 · Spark` … `09 · Review / QA`) and the label set
+It creates the nine phase milestones (`01 · Kickoff` … `09 · Review / QA`) and the label set
 (`spark`, `artifact`, `amendment`, `severity:minor/major`, `mode:auto`, `mode:collab`,
-`gate`, `blocked`). Requires the [GitHub CLI](https://cli.github.com) authenticated via
-`gh auth login`. It's idempotent — safe to re-run.
+`gate`, `blocked`). Spark isn't a milestone — see [Sparks and the lab](#sparks-and-the-lab).
+Requires the [GitHub CLI](https://cli.github.com) authenticated via `gh auth login`. It's
+idempotent — safe to re-run.
 
 > **GitHub is optional.** The knowledge base is the source of truth; GitHub is bookkeeping
 > on top of it. Every phase skill degrades gracefully if `gh` isn't set up — you can run
 > the whole framework in the files alone.
 
-### 3. Drop in your idea at Spark
+### 3. Record the promoted spark
 
-Open a **Spark** issue (or create `knowledge-base/00-spark/spark.md` from
-`knowledge-base/_templates/_artifact-template.md`): one paragraph and a gut-check. Most
-sparks stay parked. When you decide an idea is worth it, mark it **Promote** and move it to
-the `01 · Kickoff` milestone — that's the graduation gate.
+Creating this repo *is* graduation — the idea already crossed the gate. Capture it as the
+project's origin record: write `knowledge-base/00-spark/spark.md` (start from
+`knowledge-base/_templates/_artifact-template.md`) — one paragraph and the problem it
+chases. This single seed is what Kickoff reads.
+
+> Triaging *many* ideas is a lab-level activity, not a per-project one — see
+> [Sparks and the lab](#sparks-and-the-lab).
 
 ### 4. Run the phases with the skills
 
