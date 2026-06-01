@@ -112,18 +112,33 @@ There are two buildable pieces, and they're both here:
 
 ### 1. Create a project from the template
 
-The `template/` directory is meant to be used as a [GitHub template
-repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
-Either mark a repo containing it as a template and click **Use this template**, or with the
-GitHub CLI:
+The framework lives in `SVehrenkamp/agency-lab`, with the per-project starting point in
+the **`template/` subdirectory**. To start a new project, create a fresh repo and copy the
+template contents into it:
 
 ```bash
-gh repo create my-new-idea --template SVehrenkamp/agency-lab-template --private --clone
+# Create your new project repo and clone it
+gh repo create my-new-idea --private --clone
 cd my-new-idea
+
+# Pull the template files in from agency-lab
+git clone --depth 1 https://github.com/SVehrenkamp/agency-lab.git .agency-lab-src
+cp -R .agency-lab-src/template/. .
+rm -rf .agency-lab-src
+
+# Commit the starting point
+git add . && git commit -m "Initialize from Agency Lab template"
+git push -u origin main
 ```
 
-> If you keep the template inside this repo rather than as its own template repo, just copy
-> the `template/` contents into your new project to start.
+> **Why not `gh repo create --template`?** GitHub's template feature copies a whole
+> repository, not a subdirectory, and only works against a repo marked as a template — so
+> it can't target `agency-lab/template/`. If you want the one-click **Use this template**
+> experience, split `template/` into its own repo (e.g. `agency-lab-template`) and mark it
+> as a template under *Settings → Template repository*. Then this works:
+> ```bash
+> gh repo create my-new-idea --template SVehrenkamp/agency-lab-template --private --clone
+> ```
 
 ### 2. Bootstrap milestones and labels
 
@@ -131,6 +146,7 @@ GitHub's template feature copies files but **not** milestones, labels, or issues
 the setup script once per project:
 
 ```bash
+chmod +x scripts/setup.sh   # if it didn't carry over as executable
 ./scripts/setup.sh
 ```
 
