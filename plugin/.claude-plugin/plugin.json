@@ -1,0 +1,18 @@
+{
+  "name": "agency-lab",
+  "version": "0.1.0",
+  "description": "Phase-gated spark-to-ship workflow: nine skills that drive a new product or business idea through Kickoff, Research, Refinement, Scoping, UX, Design, Dev Kickoff, Implementation, and QA — each writing structured artifacts into a knowledge base, with cheap backtracking via amendment logs and human gates between phases.",
+  "author": {
+    "name": "Scott Vehrenkamp"
+  },
+  "homepage": "https://github.com/SVehrenkamp/agency-lab",
+  "repository": "https://github.com/SVehrenkamp/agency-lab",
+  "license": "MIT",
+  "keywords": ["product", "workflow", "framework", "prd", "design", "phases", "spark-to-ship"],
+  "dependencies": [
+    "product-management",
+    "design",
+    "engineering",
+    "marketing"
+  ]
+}

@@ -23,7 +23,7 @@ treat that as the point of the exercise, not a problem (see step 5).
 
 - **Consumes:** `knowledge-base/01-kickoff/problem-brief.md` (and `shared-understanding.md` for context)
 - **Produces:** `knowledge-base/02-research/competitive-landscape.md`, `pricing-teardown.md`, `sentiment-analysis.html`
-- **Engine:** `product-management:competitive-brief` (and `marketing:competitive-brief` for go-to-market angle)
+- **Engine (optional):** `product-management:competitive-brief` (and `marketing:competitive-brief` for go-to-market angle) — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `02 · Research`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

@@ -21,7 +21,7 @@ Implementation's iterations). It sets the structure everything downstream is bui
 
 - **Consumes:** `knowledge-base/04-scoping/v1-scope.md`, `knowledge-base/05-ux/` (flows + edge cases), and `knowledge-base/06-design/design.md`
 - **Produces:** `knowledge-base/07-dev-kickoff/architecture.md`, `system-design.md`, `adr/*.md`
-- **Engine:** `engineering:architecture` (ADRs) and `engineering:system-design`
+- **Engine (optional):** `engineering:architecture` (ADRs) and `engineering:system-design` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `07 · Dev Kickoff`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

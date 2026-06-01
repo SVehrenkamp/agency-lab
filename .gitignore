@@ -16,3 +16,7 @@
 # Environment / secrets
 .env
 .env.local
+
+# Build artifacts
+dist/
+*.plugin

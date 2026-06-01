@@ -25,7 +25,7 @@ visual, not architectural; how it's built is Dev Kickoff's job.
 
 - **Consumes:** all of `knowledge-base/05-ux/`, plus `knowledge-base/04-scoping/v1-scope.md` and `knowledge-base/03-refinement/product-edge.md`
 - **Produces:** `knowledge-base/06-design/brand-brief.md`, `design-system.html`, `design.md`, `designs.html`
-- **Engine:** `design:design-system` (build) and `design:design-critique` (self-review)
+- **Engine (optional):** `design:design-system` (build) and `design:design-critique` (self-review) — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `06 · Design`
 - **Mode:** mixed — the brand interview is `mode:collab` (taste); the system and designs are draft-then-approve.
 

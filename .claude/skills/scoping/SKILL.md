@@ -22,7 +22,7 @@ Kickoff).
 
 - **Consumes:** `knowledge-base/03-refinement/prd.md` and `product-edge.md`
 - **Produces:** `knowledge-base/04-scoping/v1-scope.md`, `out-of-scope.md`
-- **Engine:** `product-management:write-spec` and `product-management:roadmap-update`
+- **Engine (optional):** `product-management:write-spec` and `product-management:roadmap-update` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `04 · Scoping`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

@@ -23,7 +23,7 @@ cut to an MVP comes next.
 
 - **Consumes:** `knowledge-base/01-kickoff/problem-brief.md` + `shared-understanding.md` and all of `knowledge-base/02-research/`
 - **Produces:** `knowledge-base/03-refinement/prd.md`, `product-edge.md`
-- **Engine:** `product-management:write-spec`
+- **Engine (optional):** `product-management:write-spec` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `03 · Refinement`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

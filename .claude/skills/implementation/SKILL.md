@@ -22,7 +22,7 @@ Dev Kickoff (see step 5), not a quiet divergence.
 
 - **Consumes:** `knowledge-base/07-dev-kickoff/architecture.md` + `system-design.md` + `adr/`, plus `04-scoping/v1-scope.md`, `06-design/design.md`, and `05-ux/` for behavior
 - **Produces:** `knowledge-base/08-implementation/iteration-plans/`, `test-plans/`, and the project's code
-- **Engine:** `product-management:sprint-planning` (iteration planning) and `engineering:code-review`
+- **Engine (optional):** `product-management:sprint-planning` (iteration planning) and `engineering:code-review` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `08 · Implementation`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

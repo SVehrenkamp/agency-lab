@@ -23,7 +23,7 @@ not beauty.
 
 - **Consumes:** `knowledge-base/04-scoping/v1-scope.md`
 - **Produces:** `knowledge-base/05-ux/user-flows.md`, `edge-cases.md`, `wireframes.html`
-- **Engine:** `design:user-research` and `design:ux-copy`
+- **Engine (optional):** `design:user-research` and `design:ux-copy` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `05 · UX / Wireframing`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

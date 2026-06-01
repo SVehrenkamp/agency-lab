@@ -22,7 +22,7 @@ artifacts; the human's judgment is what closes the phase.
 
 - **Consumes:** `knowledge-base/00-spark/spark.md` (a *promoted* spark)
 - **Produces:** `knowledge-base/01-kickoff/problem-brief.md`, `knowledge-base/01-kickoff/shared-understanding.md`
-- **Engine:** the grill-me posture from `product-management:brainstorm`
+- **Engine (optional):** the grill-me posture from `product-management:brainstorm` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `01 · Kickoff`
 
 ## 1. Preflight

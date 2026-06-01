@@ -21,7 +21,7 @@ Implementation as a defect, not patched quietly here.
 
 - **Consumes:** the delivered feature (its code + `08-implementation/test-plans/` entry) and its requirements: `04-scoping/v1-scope.md` acceptance, `05-ux/user-flows.md` + `edge-cases.md`, and `06-design/design.md`
 - **Produces:** `knowledge-base/09-qa/qa-reports.md`, `review-checklists/`
-- **Engine:** `engineering:testing-strategy`
+- **Engine (optional):** `engineering:testing-strategy` — used if installed; otherwise apply the same methodology from this skill's steps
 - **Milestone:** `09 · Review / QA`
 
 All paths are relative to the project root (the folder containing `knowledge-base/`).

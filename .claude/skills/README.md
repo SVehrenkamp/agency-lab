@@ -32,9 +32,19 @@ framework from stalling.
 **Default mode is draft-then-approve.** The skill drafts; the human applies judgment.
 Only deviate where the phase README marks `mode:auto` or `mode:collab`.
 
+**Engines are optional accelerators, never hard dependencies.** Each phase skill is
+self-contained and carries its own methodology. The "engine" it names is a skill from a
+separate plugin that *deepens* the work when it's installed — but a skill must never
+block or fail because its engine is missing. If the engine plugin is present, use it for
+extra depth; if not, apply the methodology from the skill's own steps. (These are the
+recommended companion plugins listed in the project README; see also the framework's
+"degrade gracefully" stance on GitHub/`gh`.)
+
 ## Phase → engine map
 
-| Phase | Skill folder | Backing skill (engine) | Consumes | Produces |
+The engine column lists the *optional* companion skill each phase uses if installed.
+
+| Phase | Skill folder | Backing skill (engine, optional) | Consumes | Produces |
 |-------|--------------|------------------------|----------|----------|
 | 01 Kickoff | `kickoff/` | `product-management:brainstorm` | `00-spark/spark.md` | `problem-brief.md`, `shared-understanding.md` |
 | 02 Research | `research/` | `product-management:competitive-brief` | `01-kickoff/problem-brief.md` | `competitive-landscape.md`, `pricing-teardown.md`, `sentiment-analysis.html` |
