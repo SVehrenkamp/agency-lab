@@ -156,7 +156,7 @@ Gates are always `mode:collab` by definition. That single rule guarantees a huma
 
 The framework reduces to two buildable pieces.
 
-**Piece one: the template repo.** A GitHub template containing the knowledge-base folder skeleton, the nine milestones pre-created, the full label set, and an issue template per artifact. This is the "lab" — it makes every project structurally identical and repeatable, and turns project setup into one click.
+**Piece one: the template repo.** This repository is itself a GitHub template: the scaffold lives at the root — the knowledge-base folder skeleton, the issue forms in `.github/`, and `scripts/setup.sh` (which creates the milestones and label set, since GitHub templates don't copy those). It makes every project structurally identical and repeatable, and turns project setup into one command (`gh repo create … --template …`). The framework spec and the phase skills travel with each project, so a project is self-contained.
 
 **Piece two: the phase skills.** One skill per phase that knows its artifact contract — reads the upstream documents, runs the work, and writes its outputs into the correct knowledge-base folder. Most of these map onto skills already installed in this environment:
 

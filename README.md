@@ -82,26 +82,30 @@ repeat).
 
 ## What's in this repo
 
+This repo is itself the GitHub template — the scaffold lives at the root, so a project
+created from it is ready to go.
+
 ```
 agency-lab/
-├── README.md                 ← you are here
-├── FRAMEWORK.md              ← the full framework spec and rationale
-├── template/                 ← the repeatable per-project starting point
-│   ├── README.md             ← how to instantiate a project
-│   ├── knowledge-base/       ← the 10 phase folders + artifact template
-│   ├── .github/ISSUE_TEMPLATE ← Spark / Artifact / Amendment / Gate-Review forms
-│   └── scripts/setup.sh      ← creates milestones + labels in a new repo
-└── skills/                   ← the orchestration layer: one skill per phase
-    ├── README.md             ← the shared phase-skill pattern
+├── README.md                  ← you are here
+├── FRAMEWORK.md               ← the full framework spec and rationale
+├── knowledge-base/            ← the 10 phase folders + artifact template
+│   ├── 00-spark/ … 09-qa/     ← one folder per phase, each with a README
+│   └── _templates/            ← _artifact-template.md (carries the amendment log)
+├── .github/ISSUE_TEMPLATE/    ← Spark / Artifact / Amendment / Gate-Review forms
+├── scripts/setup.sh           ← creates milestones + labels in a new repo
+└── skills/                    ← the orchestration layer: one skill per phase
+    ├── README.md              ← the shared phase-skill pattern
     ├── kickoff/ research/ refinement/ scoping/ ux/
     └── design/ dev-kickoff/ implementation/ qa/
 ```
 
 There are two buildable pieces, and they're both here:
 
-1. **The template** ([`template/`](template/)) — a GitHub template repo that makes every
-   project structurally identical: the same knowledge-base folders, phase milestones,
-   labels, and issue forms.
+1. **The template** — the root scaffold (`knowledge-base/`, `.github/`, `scripts/`) that
+   makes every project structurally identical: the same phase folders, milestones, labels,
+   and issue forms. Because the repo is marked as a GitHub template, new projects copy it
+   with one command.
 2. **The phase skills** ([`skills/`](skills/)) — nine skills, one per phase, that read the
    upstream artifacts, run the phase's work (each wrapping a proven engine skill), and
    write outputs into the right knowledge-base folder.
@@ -112,33 +116,19 @@ There are two buildable pieces, and they're both here:
 
 ### 1. Create a project from the template
 
-The framework lives in `SVehrenkamp/agency-lab`, with the per-project starting point in
-the **`template/` subdirectory**. To start a new project, create a fresh repo and copy the
-template contents into it:
+`SVehrenkamp/agency-lab` is a [GitHub template
+repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository),
+so a new project is one line:
 
 ```bash
-# Create your new project repo and clone it
-gh repo create my-new-idea --private --clone
-cd my-new-idea
-
-# Pull the template files in from agency-lab
-git clone --depth 1 https://github.com/SVehrenkamp/agency-lab.git .agency-lab-src
-cp -R .agency-lab-src/template/. .
-rm -rf .agency-lab-src
-
-# Commit the starting point
-git add . && git commit -m "Initialize from Agency Lab template"
-git push -u origin main
+gh repo create my-new-idea --template SVehrenkamp/agency-lab --private --clone && cd my-new-idea
 ```
 
-> **Why not `gh repo create --template`?** GitHub's template feature copies a whole
-> repository, not a subdirectory, and only works against a repo marked as a template — so
-> it can't target `agency-lab/template/`. If you want the one-click **Use this template**
-> experience, split `template/` into its own repo (e.g. `agency-lab-template`) and mark it
-> as a template under *Settings → Template repository*. Then this works:
-> ```bash
-> gh repo create my-new-idea --template SVehrenkamp/agency-lab-template --private --clone
-> ```
+Or click **Use this template → Create a new repository** on the repo page.
+
+Each new project starts with the full scaffold at its root — the `knowledge-base/` folders,
+the `.github/` issue forms, and `scripts/setup.sh` — and carries the framework (`FRAMEWORK.md`)
+and the phase skills (`skills/`) along with it, so the project is self-contained.
 
 ### 2. Bootstrap milestones and labels
 
@@ -238,5 +228,5 @@ to drive the GitHub board with Projects custom fields or plain labels (see
 
 - **[FRAMEWORK.md](FRAMEWORK.md)** — the full spec: phases, artifact contracts, GitHub
   mechanics, the automation model, and parked decisions.
-- **[template/README.md](template/README.md)** — how to instantiate and run a project.
 - **[skills/README.md](skills/README.md)** — the shared phase-skill pattern and engine map.
+- **[knowledge-base/README.md](knowledge-base/README.md)** — the artifact map for each phase.
